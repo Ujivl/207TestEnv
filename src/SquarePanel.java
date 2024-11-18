@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * A child class that inherits Jpanel, it will hold all the post-it notes and take care adding/removing/editing
  */
 class SquarePanel extends JPanel {
-    private ArrayList<PostNote> postNotes; // List to hold all squares on the panel
+    private ArrayList<PostNote> postNotes; // List to hold all post it notes on the panel
 
     public SquarePanel(ArrayList<PostNote> postNotes) {
         this.postNotes = postNotes;
@@ -17,12 +17,12 @@ class SquarePanel extends JPanel {
 
     /**
      * Adds a new Post-it note and its components (label and text field) to the panel.
-     * @param postNote Square to add to the panel
+     * @param postNote postit note to add to the panel
      */
     public void addPostNote(PostNote postNote) {
         add(postNote.getLabel()); // This will hold the actual post it note shape
         add(postNote.getTextField()); // This is the text field u can write on
-        repaint(); // Refresh the panel to display the new square
+        repaint(); // Refresh the panel to display the new post it note
     }
 
     /**
@@ -76,10 +76,10 @@ class SquarePanel extends JPanel {
     }
 
     /**
-     * Draws a line connecting a square to its parent square.
+     * Draws a line connecting a postit note to its parent post it note.
      * @param g Graphics object for drawing
-     * @param postNote The child square
-     * @param parentPostNote The parent square
+     * @param postNote The child post it note
+     * @param parentPostNote The parent post it note
      */
     private void drawConnectionLine(Graphics g, PostNote postNote, PostNote parentPostNote) {
         g.setColor(Color.BLACK);  // Makes the line color black
