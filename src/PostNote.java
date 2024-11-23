@@ -166,13 +166,8 @@ class PostNote {
         JMenuItem editPostItItem = new JMenuItem("Edit Post-it note");
         editPostItItem.addActionListener(event -> startEditing());
 
-        // creates a new panel, and uses it to call createConnectedPostNote, with the current postitnote as the parent parameter
-        JMenuItem createPostItItem = new JMenuItem("Create Connected Post-it note");
-        createPostItItem.addActionListener(event -> {
-            SquarePanel newPanel = (SquarePanel) label.getParent();
-            newPanel.createConnectedPostNote(this);
-        });
-
+            // TODO: DELETE POST IT NOTE IMPLEMENTATION
+        /**
         // deletes the postit item
         JMenuItem deletePostItItem = new JMenuItem("Delete Post-it note");
         deletePostItItem.addActionListener(event -> panel.removePostNote(this));
@@ -181,10 +176,15 @@ class PostNote {
         if (this == ((MindMapApp) SwingUtilities.getWindowAncestor(panel)).getInitialPostNote()) {
             deletePostItItem.setEnabled(false);
         }
+        */
 
         menu.add(editPostItItem);
-        menu.add(createPostItItem);
+
+            // TODO: DELETE POST IT NOTE IMPLEMENTATION
+        /**
         menu.add(deletePostItItem);
+        */
+
         menu.show(label, e.getX(), e.getY());
     }
 
